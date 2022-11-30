@@ -1,3 +1,2 @@
 void input_map(){
-  
 }
