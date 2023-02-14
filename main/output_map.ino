@@ -1,10 +1,19 @@
 void output_map(){
-
-  
+ 
   if (Serial.available() > 0){
-    output_i = Serial.parseInt();
+    ser_pist = Serial.parseInt();
+    if (ser_pist == 1){
+      output_pist = !output_pist;
+    }
   }
-  analogWrite(VFD_analog, output_i, CURRENT);
+  ConnectorIO1.State(output_pist);
+
+//  if (Serial.available() > 0){
+//    output_i = Serial.parseInt();
+//  }
+//  if 
+//  analogWrite(VFD_analog, output_i, CURRENT);
+
   
 //  output_i = 2047;
 //  if (millis()- start_time < 20000){

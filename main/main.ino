@@ -11,6 +11,8 @@ int start_time = millis();
 int output_i = 0;
 int current_time = 0;
 int vfd_analog_in = 0;
+bool output_pist = false;
+int ser_pist = 0;
 
 void setup() {
   
@@ -20,7 +22,6 @@ void setup() {
 }
 
 void loop() {
-  
   // read input signals
   input_map();
   

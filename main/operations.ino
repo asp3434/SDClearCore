@@ -1,5 +1,6 @@
 void operations(){
 
+
   // change fequency up to 2047 and then put it back down
 //  if  ((current_time - start_time) >= allowed_time) {
 //    if (output_i < 1847){
