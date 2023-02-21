@@ -1,18 +1,26 @@
 void output_map(){
  
   if (Serial.available() > 0){
-    ser_pist = Serial.parseInt();
-    if (ser_pist == 1){
+    ser_int = Serial.parseInt();
+    if (ser_int == 1){
       output_pist = !output_pist;
+    }
+    else if (ser_int == 69){
+      output_motor = !output_motor;
+    }
+    else{
+      change_speed = !change_speed;
     }
   }
   ConnectorIO1.State(output_pist);
-
+  ConnectorIO2.State(output_motor);
 //  if (Serial.available() > 0){
 //    output_i = Serial.parseInt();
 //  }
-//  if 
-//  analogWrite(VFD_analog, output_i, CURRENT);
+  if (change_speed){
+    analogWrite(VFD_analog, ser_int, CURRENT);
+    change_speed = !change_speed;
+  }
 
   
 //  output_i = 2047;
