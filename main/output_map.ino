@@ -8,12 +8,17 @@ void output_map(){
     else if (ser_int == 69){
       output_motor = !output_motor;
     }
+    else if (ser_int == 70){
+      forward_motor = !forward_motor;
+    }
     else{
       change_speed = !change_speed;
     }
   }
   ConnectorIO1.State(output_pist);
-  ConnectorIO2.State(output_motor);
+  ConnectorIO3.State(output_motor);
+  ConnectorIO2.State(forward_motor);
+  
 //  if (Serial.available() > 0){
 //    output_i = Serial.parseInt();
 //  }

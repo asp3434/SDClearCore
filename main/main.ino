@@ -17,6 +17,7 @@ int current_time = 0;
 int vfd_analog_in = 0;
 bool output_pist = false;
 bool output_motor = false;
+bool forward_motor = false;
 int ser_int = 0;
 bool change_speed = false;
 
@@ -29,6 +30,7 @@ void setup() {
   Serial.begin(9600);
   ConnectorIO1.State(false);
   ConnectorIO2.State(false);
+  ConnectorIO3.State(false);
   analogWrite(VFD_analog, 0, CURRENT);
 }
 
