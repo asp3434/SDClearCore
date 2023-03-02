@@ -8,6 +8,7 @@ from openpyxl import Workbook
 from openpyxl.styles import Alignment
 import time
 import re
+import serial
 
 
 
@@ -645,20 +646,20 @@ class App(customtkinter.CTk):
 
     def sendToClearcore(self):
 
-        if vibButton.get() == 1:
-            setFreq = freqEntry.get()
+        if self.vibButton.get() == 1:
+            setFreq = self.freqEntry.get()
         else:
             setFreq = 0
-        if forceButton.get() == 1:
-            setForce = forceEntry.get()
+        if self.compactButton.get() == 1:
+            setForce = self.forceEntry.get()
         else:
             setForce = 0
-        if rotationButton.get() == 1:
-            setRotation = rotationEntry.get()
+        if self.rotateButton.get() == 1:
+            setRotation = self.rotateEntry.get()
         else:
             setRotation = 0
-        if timeButton.get() == 1:
-            setTime = timeEntry.get()
+        if self.timeButton.get() == 1:
+            setTime = self.timeEntry.get()
         else:
             setTime = 0
         sendComm = 'Freq:' + str(setFreq) + ',Force:' + str(setForce) + ',Rotation:' + str(setRotation) + \
